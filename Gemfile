@@ -17,4 +17,5 @@ group :development, :test do
   gem 'spring'
   
   gem "annotate"
+  gem "rspec-rails"
 end
