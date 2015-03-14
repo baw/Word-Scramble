@@ -1,0 +1,30 @@
+<div>
+  <div>
+    Scrambled Word
+    <ul class="word">
+      <li class="letter" ng-repeat="letter in scrambled track by $index">
+        {{letter}}
+      </li>
+    </ul>
+  </div>
+  
+  <div ng-class="{correct: correct}">
+    Your Guess
+    <ul>
+      <li class="letter" ng-repeat="letter in guess track by $index">
+        {{letter}}
+      </li>
+    </ul>
+  </div>
+  
+  <div>
+    <label>Min
+      <input type="number" ng-model="min">
+    </label>
+    <label>Max
+      <input type="number" ng-model="max">
+    </label>
+    
+    <button ng-click="newRandomWord()">New Word</button>
+  </div>
+</div>
