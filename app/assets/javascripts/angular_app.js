@@ -1,0 +1,1 @@
+var wordScramble = angular.module("wordScramble", []);
