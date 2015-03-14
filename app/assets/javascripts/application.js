@@ -11,4 +11,5 @@
 // about supported directives.
 //
 //= require angular_app
+//= require_tree ./services
 //= require_tree .
