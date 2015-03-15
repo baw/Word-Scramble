@@ -1,5 +1,5 @@
 class Api::WordsController < ApplicationController
-  def randomWord
+  def random_word
     min = params[:min].to_i
     max = params[:max].to_i
     
