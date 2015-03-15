@@ -1,4 +1,4 @@
-require "JSON"
+require "json"
 require "rails_helper"
 
 describe Api::WordsController do
