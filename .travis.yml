@@ -1,6 +1,7 @@
 language: ruby
 rvm:
   - 2.2.1
+before_script: rake db:create db:migrate
 script: bundle exec rspec
 addons:
   postgresql: "9.3"
