@@ -14,7 +14,7 @@ wordScramble.controller("WordController",
         var char = String.fromCharCode($event.keyCode);
         var charLeft = removeChar(char);
         
-        if (!$scope.correct && charLeft) {
+        if (!$scope.correct && charLeft && !isMobile()) {
             $scope.guess.push(char);
             
             if ($scope.guess.length === $scope.word.length) checkGuess();
@@ -40,6 +40,10 @@ wordScramble.controller("WordController",
             
             resetGuess();
         }
+    };
+    
+    var isMobile = function () {
+        return typeof window.orientation !== undefined;
     };
     
     var removeChar = function (char) {
