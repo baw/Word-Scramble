@@ -1,5 +1,5 @@
 <div>
-  <div>
+  <div class="scrambled">
     Scrambled Word
     <ul class="word">
       <li class="letter" ng-repeat="letter in scrambled track by $index">
@@ -8,13 +8,18 @@
     </ul>
   </div>
   
-  <div ng-class="{correct: correct}">
+  <div ng-class="{correct: correct}" class="guess">
     Your Guess
-    <ul>
+    <ul class="non-mobile">
       <li class="letter" ng-repeat="letter in guess track by $index">
         {{letter}}
       </li>
     </ul>
+    
+    <input type="text"
+           class="mobile"
+           ng-model="mobileGuess"
+           ng-model-options="{ getterSetter: true }">
   </div>
   
   <div>

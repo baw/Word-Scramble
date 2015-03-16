@@ -1,0 +1,7 @@
+.guess .mobile {
+  display: none;
+}
+
+.guess .non-mobile {
+  display: block;
+}

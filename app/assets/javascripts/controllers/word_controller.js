@@ -21,6 +21,14 @@ wordScramble.controller("WordController",
         }
     };
     
+    $scope.mobileGuess = function (guess) {
+        if (angular.isDefined(guess)) {
+            $scope.guess = guess.split("");
+        }
+        
+        return $scope.guess.join("");
+    };
+    
     $scope.newRandomWord = function () {
         randomWord($scope.min, $scope.max, updateWord);
     };
