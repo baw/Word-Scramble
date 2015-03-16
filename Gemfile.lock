@@ -64,6 +64,12 @@ GEM
       activesupport (>= 4.1.0)
     hike (1.2.3)
     i18n (0.7.0)
+    jasmine (2.2.0)
+      jasmine-core (~> 2.2)
+      phantomjs
+      rack (>= 1.2.1)
+      rake
+    jasmine-core (2.2.0)
     jbuilder (2.2.11)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -83,6 +89,7 @@ GEM
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     pg (0.18.1)
+    phantomjs (1.9.8.0)
     rack (1.6.0)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -172,6 +179,7 @@ PLATFORMS
 DEPENDENCIES
   annotate
   byebug
+  jasmine
   jbuilder (~> 2.0)
   jquery-rails
   pg

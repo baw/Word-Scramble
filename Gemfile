@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "2.2.1"
+
 gem 'rails', '4.2.0'
 
 gem "thin"
@@ -18,4 +20,5 @@ group :development, :test do
   
   gem "annotate"
   gem "rspec-rails"
+  gem "jasmine"
 end
