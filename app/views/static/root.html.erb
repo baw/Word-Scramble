@@ -1,6 +1,8 @@
-<div>
+<div class="container">
+  <h1 class="text-center">Word Scramble</h1>
+  
   <div class="scrambled">
-    Scrambled Word
+   <h2>Scrambled Word</h2>
     <ul class="word">
       <li class="letter" ng-repeat="letter in scrambled track by $index">
         {{letter}}
@@ -9,30 +11,38 @@
   </div>
   
   <div ng-class="{correct: correct}" class="guess">
-    Your Guess
-    <ul class="non-mobile">
-      <li class="letter" ng-repeat="letter in guess track by $index">
-        {{letter}}
-      </li>
-    </ul>
-    
+    <h2>Your Guess</h2>
+    <div class="non-mobile">
+      <ul class="word" ng-hide="guess.length === 0">
+        <li class="letter" ng-repeat="letter in guess track by $index">
+          {{letter}}
+        </li>
+      </ul>
+      <span ng-show="guess.length === 0">Type your guess</span>
+    </div>
     <input type="text"
            class="mobile"
            ng-model="mobileGuess"
            ng-model-options="{ getterSetter: true }"
            autocomplete="off"
            autocorrect="off"
-           autocapitalize="off">
+           autocapitalize="off"
+           placeholder="Enter your guess">
   </div>
   
   <div>
-    <label>Min
-      <input type="number" ng-model="min">
-    </label>
-    <label>Max
-      <input type="number" ng-model="max">
-    </label>
+    <h2 class="text-center">Word Length<h2>
+    <div class="clearfix length">
+      <div class="left">
+        <label for="min">Min</label>
+        <input id="min" type="number">
+      </div>
+      <div class="right ">
+        <label for="max">Max</label>
+        <input id="max" type="number">
+      </div>
+    </div>
     
-    <button ng-click="newRandomWord()">New Word</button>
+    <button class="btn" ng-click="newRandomWord()">New Word</button>
   </div>
 </div>

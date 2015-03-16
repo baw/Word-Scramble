@@ -16,14 +16,64 @@
  *= require_self
  */
 
- .word {
-   list-style: none;
- }
-
- .letter {
-   display: inline-block;
- }
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
  
- .correct {
-   background-color: green;
- }
+.left {
+  float: left;
+}
+ 
+.right {
+  float: right;
+}
+
+.container {
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  width: 100%;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 4px;
+  background-color: green;
+  border: none;
+}
+
+.length .right, .length .left {
+  width: 48%;
+}
+
+.length label {
+  width: 100%;
+}
+
+.length input {
+  width: 100%;
+}
+
+.word {
+  list-style: none;
+  padding: 0;
+}
+
+.letter {
+  display: inline-block;
+}
+
+.correct {
+  background-color: green;
+}
