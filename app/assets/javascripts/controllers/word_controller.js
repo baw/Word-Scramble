@@ -16,14 +16,14 @@ wordScramble.controller("WordController",
         
         if (!$scope.correct && charLeft && !isMobile()) {
             $scope.guess.push(char);
+            checkGuess();
         }
-        
-        if ($scope.guess.length === $scope.word.length) checkGuess();
     };
     
     $scope.mobileGuess = function (guess) {
         if (angular.isDefined(guess)) {
             $scope.guess = guess.split("");
+            checkGuess();
         }
         
         return $scope.guess.join("");
@@ -34,6 +34,8 @@ wordScramble.controller("WordController",
     };
     
     var checkGuess = function () {
+        if ($scope.guess.length !== $scope.word.length) return;
+        
         if ($scope.word === $scope.guess.join("")) {
             $scope.correct = true;
         } else {
