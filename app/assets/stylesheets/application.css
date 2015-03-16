@@ -23,3 +23,7 @@
  .letter {
    display: inline-block;
  }
+ 
+ .correct {
+   background-color: green;
+ }
