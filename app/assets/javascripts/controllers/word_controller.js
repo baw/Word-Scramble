@@ -12,6 +12,7 @@ wordScramble.controller("WordController",
     
     $scope.handleKeyPress = function ($event) {
         if  (isMobile() || isInput($event.target)) return;
+        
         var char = String.fromCharCode($event.keyCode).toLowerCase();
         var charLeft = removeChar(char);
         
@@ -21,7 +22,9 @@ wordScramble.controller("WordController",
         } else if ($event.keyCode === 8) {
             $event.preventDefault();
             
-            $scope.guess.pop();
+            if ($scope.guess.length > 0) {
+                addChar($scope.guess.pop());
+            }
         }
     };
     
@@ -47,6 +50,10 @@ wordScramble.controller("WordController",
             
             resetGuess();
         }
+    };
+    
+    var addChar = function (char) {
+        chars[char]++;
     };
     
     var isInput = function (elm) {
