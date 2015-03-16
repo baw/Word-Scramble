@@ -1,5 +1,5 @@
 wordScramble.controller("WordController",
-["randomWord", "shuffleWord", "$scope", function (randomWord, shuffleWord, $scope) {
+["Chars", "randomWord", "shuffleWord", "$scope", function (Chars, randomWord, shuffleWord, $scope) {
     $scope.word = "";
     $scope.scrambled = [];
     $scope.guess = [];
@@ -8,13 +8,13 @@ wordScramble.controller("WordController",
     $scope.correct = false;
     $scope.wrong = false;
     
-    var chars = {};
+    var chars = new Chars();
     
     $scope.handleKeyPress = function ($event) {
         if  (isMobile() || isInput($event.target)) return;
         
         var char = String.fromCharCode($event.keyCode).toLowerCase();
-        var charLeft = removeChar(char);
+        var charLeft = chars.removeChar(char);
         
         if (!$scope.correct && charLeft) {
             $scope.guess.push(char);
@@ -23,7 +23,7 @@ wordScramble.controller("WordController",
             $event.preventDefault();
             
             if ($scope.guess.length > 0) {
-                addChar($scope.guess.pop());
+                chars.addChar($scope.guess.pop());
             }
         }
     };
@@ -52,10 +52,6 @@ wordScramble.controller("WordController",
         }
     };
     
-    var addChar = function (char) {
-        chars[char]++;
-    };
-    
     var isInput = function (elm) {
         return elm.tagName === "INPUT";
     };
@@ -64,34 +60,10 @@ wordScramble.controller("WordController",
         return typeof window.orientation !== "undefined";
     };
     
-    var removeChar = function (char) {
-         if (chars[char] !== undefined && chars[char] > 0) {
-             chars[char]--;
-             
-             return true;
-         } else {
-             return false;
-         }
-    };
-    
     var resetGuess = function () {
         $scope.guess = [];
         $scope.correct = false;
-        updateChars($scope.word);
-    };
-    
-    var updateChars = function (word) {
-        var splitted = word.split("");
-        
-        chars = splitted.reduce(function (acc, c) {
-            if (acc[c] === undefined) {
-                acc[c] = 1;
-            } else {
-                acc[c]++;
-            }
-            
-            return acc;
-        }, {});
+        chars.updateChars($scope.word);
     };
     
     var updateWord = function (err, data) {
@@ -100,7 +72,7 @@ wordScramble.controller("WordController",
         $scope.word = data.word;
         $scope.scrambled = shuffleWord(data.word).split("");
         
-        updateChars(data.word);
+        chars.updateChars(data.word);
         
         resetGuess();
     };
