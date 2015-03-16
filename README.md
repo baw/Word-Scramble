@@ -2,7 +2,7 @@
 
 # Word Scramble
 
-Can you unscramble like the best of them? Then, this is the game for you. Try to figure out what word is scrambled up from a lit of almost 10,000 possible words.
+Can you unscramble like the best of them? Then, this is the game for you. Try to figure out what word is scrambled up from a list of almost 10,000 possible words.
 
 Play a live version of this game at [http://ws.brianweiser.io/](http://ws.brianweiser.io/).
 
