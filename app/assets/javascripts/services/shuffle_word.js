@@ -1,5 +1,5 @@
 wordScramble.factory("shuffleWord", function () {
-    return function (word) {
+    return function shuffleWordInternal(word) {
         var splitted = word.split("");
         
         for (var i = 0; i < splitted.length; i++) {
@@ -9,6 +9,13 @@ wordScramble.factory("shuffleWord", function () {
             splitted[j] = tmp;
         }
         
-        return splitted.join("");
+        var result = splitted.join("");
+        
+        if (result === word) {
+            return shuffleWordInternal(word);
+        } else {
+            return result;
+        }
+        
     };
 });
