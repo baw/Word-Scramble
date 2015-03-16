@@ -16,9 +16,9 @@ wordScramble.controller("WordController",
         
         if (!$scope.correct && charLeft && !isMobile()) {
             $scope.guess.push(char);
-            
-            if ($scope.guess.length === $scope.word.length) checkGuess();
         }
+        
+        if ($scope.guess.length === $scope.word.length) checkGuess();
     };
     
     $scope.mobileGuess = function (guess) {
