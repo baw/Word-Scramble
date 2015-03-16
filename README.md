@@ -23,3 +23,4 @@ Play a live version of this game at [http://ws.brianweiser.io/](http://ws.brianw
 * Create JS tests
 * Add scoring system
 * Add better error handling around min/max length
+* Add reveal word button
