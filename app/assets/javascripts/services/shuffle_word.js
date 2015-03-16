@@ -4,9 +4,7 @@ wordScramble.factory("shuffleWord", function () {
         
         for (var i = 0; i < splitted.length; i++) {
             var j = Math.floor(Math.random() * (i + 1));
-            var tmp = splitted[i];
-            splitted[i] = splitted[j];
-            splitted[j] = tmp;
+            swap(splitted, i, j);
         }
         
         var result = splitted.join("");
@@ -16,6 +14,11 @@ wordScramble.factory("shuffleWord", function () {
         } else {
             return result;
         }
-        
     };
 });
+
+var swap = function (array, i, j) {
+    var tmp = array[i];
+    array[i] = array[j];
+    array[j] = tmp;
+};
