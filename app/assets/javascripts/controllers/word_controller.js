@@ -11,10 +11,12 @@ wordScramble.controller("WordController",
     var chars = {};
     
     $scope.handleKeyPress = function ($event) {
+        if  (isMobile()) return;
+        
         var char = String.fromCharCode($event.keyCode).toLowerCase();
         var charLeft = removeChar(char);
         
-        if (!$scope.correct && charLeft && !isMobile()) {
+        if (!$scope.correct && charLeft) {
             $scope.guess.push(char);
             checkGuess();
         } else if ($event.keyCode === 8) {
