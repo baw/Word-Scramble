@@ -43,7 +43,7 @@ wordScramble.controller("WordController",
     };
     
     var isMobile = function () {
-        return typeof window.orientation !== undefined;
+        return typeof window.orientation !== "undefined";
     };
     
     var removeChar = function (char) {
