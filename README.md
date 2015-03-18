@@ -10,8 +10,9 @@ Play a live version of this game at [http://ws.brianweiser.io/](http://ws.brianw
 
 1. Clone or download this repo
 2. Run `bundle install`
-3. Run `rails server`
-4. Go to [localhost:3000](localhost:3000)
+3. Run `rake db:create db:migrate db:seed`
+4. Run `rails server`
+5. Go to [localhost:3000](localhost:3000)
 
 ## Technologies used
 
