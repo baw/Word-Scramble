@@ -15,10 +15,10 @@ wordScramble.factory("shuffleWord", function () {
             return result;
         }
     };
-});
 
-var swap = function (array, i, j) {
-    var tmp = array[i];
-    array[i] = array[j];
-    array[j] = tmp;
-};
+    var swap = function (array, i, j) {
+        var tmp = array[i];
+        array[i] = array[j];
+        array[j] = tmp;
+    };
+});
